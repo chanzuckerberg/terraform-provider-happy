@@ -33,7 +33,7 @@ for i in $(echo $RELEASES | sed -e 's/\[ //g' -e 's/\ ]//g' -e 's/\,//g'); do
   fi
 
   echo "$RELEASE> Creating release"
-  gh release create --generate-notes $RELEASE /tmp/$RELEASE/* -R $MIRROR 2>/dev/null
+  gh release create --generate-notes $RELEASE /tmp/$RELEASE/* -R $MIRROR > /dev/null 2>&1
 
   echo "$RELEASE> Cleaning up"
   rm -rf "/tmp/$RELEASE"
