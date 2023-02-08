@@ -23,7 +23,7 @@ for i in $(echo $RELEASES | sed -e 's/\[ //g' -e 's/\ ]//g' -e 's/\,//g'); do
   git push origin --tags > /dev/null 2>&1
 
   echo "$RELEASE> Downloading release to /tmp/$RELEASE"
-  gh release download $RELEASE --pattern "happy_provider*" -D "/tmp/$RELEASE" -R $REPO > /dev/null 2>&1
+  gh release download $RELEASE --pattern "terraform-provider*" -D "/tmp/$RELEASE" -R $REPO > /dev/null 2>&1
   status=$?
   # we already have the release
   if [ $status -eq 1 ]
