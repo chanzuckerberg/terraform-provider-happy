@@ -3,7 +3,7 @@ name: Mirror the terraform provider assets from chanzuckerberg/happy
 on:
   schedule:
     # Runs "every 15th minute" (see https://crontab.guru)
-    - cron: "*/15 * * * *"
+    - cron: "5 12 * * *"
 jobs:
   build:
     name: Mirror
