@@ -1,9 +1,12 @@
 name: Mirror the terraform provider assets from chanzuckerberg/happy
 
 on:
+  # this is the main way to trigger the workflow, the .github/workflows/provider-release.yaml in the happy repo 
+  # calls createWorkflowDispatch after the goreleaser step has completed
+  workflow_dispatch: {}
   schedule:
-    - cron: "0 * * * *"
-  workflow_dispatch:
+    # run on a schedule in case the workflow_dispatch fails
+    - cron: "0 8 * * *"
 
 jobs:
   build:
